@@ -1,0 +1,32 @@
+---
+// src/layouts/BaseLayout.astro
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body class="font-sans text-gray-800">
+
+    <!-- Header (opcional) -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav class="container mx-auto flex justify-between items-center p-4">
+        <h1 class="text-2xl font-bold">Anasheee</h1>
+        <ul class="flex gap-6 text-lg">
+          
+          <li><a href="#inicio" class="hover:underline">Inicio</a></li>
+          <li><a href="#quien-soy" class="hover:underline">¿Quién soy?</a></li>
+          <li><a href="#planes" class="hover:underline">Planes</a></li>
+          <li><a href="#contacto" class="hover:underline">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Aquí se inyecta el contenido de la página -->
+    <slot />
+
+  </body>
+</html>

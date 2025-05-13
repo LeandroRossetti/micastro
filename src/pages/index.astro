@@ -1,11 +1,112 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css'; // Asegurate que este archivo existe si querés estilos globales adicionales
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Landing Page">
+  <main class="space-y-20">
+
+
+    <!-- Carrusel -->
+    <section class="relative w-full h-[800px] overflow-hidden">
+      <div id="carousel" class="absolute inset-0 flex transition-transform duration-1000">
+        <div class="min-w-full h-full bg-cover bg-center" style="background-image: url('/4.jpeg');">
+          <div class="p-8 text-white bg-black/50 h-full flex flex-col justify-center items-center">
+            <h2 class="text-3xl mb-4">Imagen 1</h2>
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">Botón 1</button>
+          </div>
+        </div>
+        <div class="min-w-full h-full bg-cover bg-center" style="background-image: url('/3.jpeg');">
+          <div class="p-8 text-white bg-black/50 h-full flex flex-col justify-center items-center">
+            <h2 class="text-3xl mb-4">Imagen 2</h2>
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">Botón 2</button>
+          </div>
+        </div>
+        <div class="min-w-full h-full bg-cover bg-center" style="background-image: url('/4.jpeg');">
+          <div class="p-8 text-white bg-black/50 h-full flex flex-col justify-center items-center">
+            <h2 class="text-3xl mb-4">Imagen 3</h2>
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">Botón 3</button>
+          </div>
+        </div>
+        <div class="min-w-full h-full bg-cover bg-center" style="background-image: url('/5.jpeg');">
+          <div class="p-8 text-white bg-black/50 h-full flex flex-col justify-center items-center">
+            <h2 class="text-3xl mb-4">Imagen 4</h2>
+            <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">Botón 4</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planes -->
+    <section id="planes" class="container mx-auto py-10">
+      <h2 class="text-3xl font-bold text-center mb-8">Planes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-cover bg-center h-64 flex flex-col justify-between p-6 text-white" style="background-image: url('/plan1.jpg');">
+          <h3 class="text-xl">Plan Básico</h3>
+          <button class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded mt-4">Comprar</button>
+        </div>
+        <div class="bg-cover bg-center h-64 flex flex-col justify-between p-6 text-white" style="background-image: url('/plan2.jpg');">
+          <h3 class="text-xl">Plan Intermedio</h3>
+          <button class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded mt-4">Comprar</button>
+        </div>
+        <div class="bg-cover bg-center h-64 flex flex-col justify-between p-6 text-white" style="background-image: url('/plan3.jpg');">
+          <h3 class="text-xl">Plan Premium</h3>
+          <button class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded mt-4">Comprar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre mí con video de fondo -->
+    <section id="quien-soy" class="relative h-[400px]">
+      <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+        <source src="/video.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
+        <h2 class="text-4xl">Sobre mí</h2>
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="container mx-auto py-16">
+      <h2 class="text-3xl font-bold text-center mb-8">Testimonios</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="p-6 bg-gray-100 rounded shadow">Testimonio 1</div>
+        <div class="p-6 bg-gray-100 rounded shadow">Testimonio 2</div>
+        <div class="p-6 bg-gray-100 rounded shadow">Testimonio 3</div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="container mx-auto py-16 flex flex-col md:flex-row items-center gap-10">
+      <img src="/contacto.jpg" alt="Contacto" class="w-full md:w-1/2 rounded" />
+      <form class="w-full md:w-1/2 space-y-4">
+        <input type="text" placeholder="Nombre" class="w-full border p-2 rounded" />
+        <input type="email" placeholder="Correo" class="w-full border p-2 rounded" />
+        <textarea placeholder="Mensaje" class="w-full border p-2 rounded"></textarea>
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-6">
+    <div class="flex justify-center gap-6">
+      <a href="#" class="hover:text-blue-400">Facebook</a>
+      <a href="#" class="hover:text-blue-400">Instagram</a>
+      <a href="#" class="hover:text-blue-400">Twitter</a>
+    </div>
+  </footer>
+
+<script>
+  const carousel = document.getElementById('carousel');
+  let index = 0;
+
+  if (carousel) {
+    setInterval(() => {
+      index = (index + 1) % 4;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }, 3000);
+  }
+</script>
+
+</BaseLayout>
