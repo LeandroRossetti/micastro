@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css'; // Asegurate que este archivo existe si querés estilos globales adicionales
+---
+
+
+<BaseLayout title="Potencia">
+  <section class="container mx-auto py-16 px-4">
+    <div class="flex flex-col md:flex-row items-center gap-10">
+      <!-- Imagen a la izquierda -->
+      <div class="w-full md:w-1/2">
+        <img src="/2.jpeg" alt="Entrenamiento personalizado" class="rounded shadow w-full h-auto object-cover" />
+      </div>
+
+      <!-- Texto a la derecha -->
+      <div class="w-full md:w-1/2">
+        <h2 class="text-3xl font-bold mb-4">Potencia tu bienestar</h2>
+        <p class="text-lg text-gray-700 mb-4">
+          Potencia tu bienestar es un plan de 8 semanas
+
+
+        </p>
+        <p class="text-lg text-gray-700">
+          Donde vas a entrenar, aprender a nutrir tu cuerpo, nutrir tu mente, potenciar tu bienestar, volverte fuerte!
+          que incluye?
+2 Clases en vivo (si vamos a sudar juntasss!)
+Vas a necesitar una silla y opcional podes sumar una/s pesa/s o kettlebell y una silla.
++ 2 rutinas para que hagas por tu cuenta (opcional)
+Hay un Canal donde estan todos los ejercicios para que los veas cuando quieras.
+
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
