@@ -9,7 +9,7 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
     <section class="relative w-full h-[80vh] bg-[#F3AAB1]">
       <!-- Imagen centrada -->
       <img
-        src="/1.jpeg"
+        src={`${import.meta.env.BASE_URL}1.jpeg`}
         alt="Entrenamiento"
         class="absolute inset-0 w-full h-full object-contain"
       />
@@ -46,49 +46,24 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div
           class="bg-cover bg-center h-[80vh] flex flex-col justify-between p-0 text-white"
-          style="background-image: url('/9.jpeg');"
+          style={`background-image: url('${import.meta.env.BASE_URL}9.jpeg');`}
         >
           <h3
             class="text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded w-fit"
             style="
-      box-shadow:
-        1px 1px 0px hsl(0, 4%, 22%),
-        3px 3px 0px hsl(0, 4%, 22%),
-        4px 4px 0px hsl(0, 4%, 22%),
-        5px 5px 0px hsl(0, 4%, 22%),
-        2px 2px 0px hsl(0, 4%, 22%);
-    "
+              box-shadow:
+                1px 1px 0px hsl(0, 4%, 22%),
+                3px 3px 0px hsl(0, 4%, 22%),
+                4px 4px 0px hsl(0, 4%, 22%),
+                5px 5px 0px hsl(0, 4%, 22%),
+                2px 2px 0px hsl(0, 4%, 22%);
+            "
           >
             Nutrición
           </h3>
 
-<a
-  href="/nutricion"
-  class="bg-[#f3aab1] hover:bg-[#ffddde] px-4 py-2 rounded mt-4 inline-block text-center animate-pulse-scale"
->
-  Ver más
-</a>
-
-        </div>
-        <div
-          class="bg-cover bg-center h-[80vh] flex flex-col justify-between p-0 text-white"
-          style="background-image: url('/111.jpeg');"
-        >
-          <h3
-            class="text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded w-fit"
-            style="
-      box-shadow:
-        1px 1px 0px hsl(0, 4%, 22%),
-        3px 3px 0px hsl(0, 4%, 22%),
-        4px 4px 0px hsl(0, 4%, 22%),
-        5px 5px 0px hsl(0, 4%, 22%),
-        2px 2px 0px hsl(0, 4%, 22%);
-    "
-          >
-            Potencia tu bienestar
-          </h3>
           <a
-            href="/potencia"
+            href="/nutricion"
             class="bg-[#f3aab1] hover:bg-[#ffddde] px-4 py-2 rounded mt-4 inline-block text-center animate-pulse-scale"
           >
             Ver más
@@ -96,24 +71,48 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
         </div>
         <div
           class="bg-cover bg-center h-[80vh] flex flex-col justify-between p-0 text-white"
-          style="background-image: url('/10.jpeg');"
+          style={`background-image: url('${import.meta.env.BASE_URL}111.jpeg');`}
         >
-                <h3
+          <h3
             class="text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded w-fit"
             style="
-      box-shadow:
-        1px 1px 0px hsl(0, 4%, 22%),
-        3px 3px 0px hsl(0, 4%, 22%),
-        4px 4px 0px hsl(0, 4%, 22%),
-        5px 5px 0px hsl(0, 4%, 22%),
-        2px 2px 0px hsl(0, 4%, 22%);
-    "
+              box-shadow:
+                1px 1px 0px hsl(0, 4%, 22%),
+                3px 3px 0px hsl(0, 4%, 22%),
+                4px 4px 0px hsl(0, 4%, 22%),
+                5px 5px 0px hsl(0, 4%, 22%),
+                2px 2px 0px hsl(0, 4%, 22%);
+            "
+          >
+            Potencia tu bienestar
+          </h3>
+          <a
+           href={`${import.meta.env.BASE_URL}potencia`}
+            class="bg-[#f3aab1] hover:bg-[#ffddde] px-4 py-2 rounded mt-4 inline-block text-center animate-pulse-scale"
+          >
+            Ver más
+          </a>
+        </div>
+        <div
+          class="bg-cover bg-center h-[80vh] flex flex-col justify-between p-0 text-white"
+          style={`background-image: url('${import.meta.env.BASE_URL}10.jpeg');`}
+        >
+          <h3
+            class="text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded w-fit"
+            style="
+              box-shadow:
+                1px 1px 0px hsl(0, 4%, 22%),
+                3px 3px 0px hsl(0, 4%, 22%),
+                4px 4px 0px hsl(0, 4%, 22%),
+                5px 5px 0px hsl(0, 4%, 22%),
+                2px 2px 0px hsl(0, 4%, 22%);
+            "
           >
             Mentalidad
           </h3>
           <a
             href="/mentalidad"
-       class="bg-[#f3aab1] hover:bg-[#ffddde] px-4 py-2 rounded mt-4 inline-block text-center animate-pulse-scale"
+            class="bg-[#f3aab1] hover:bg-[#ffddde] px-4 py-2 rounded mt-4 inline-block text-center animate-pulse-scale"
           >
             Ver más
           </a>
@@ -129,7 +128,7 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
         loop
         class="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/video.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}video.mp4`} type="video/mp4" />
       </video>
       <div
         class="absolute inset-0 bg-black/50 flex justify-center items-center text-white"
@@ -153,7 +152,12 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
       id="contacto"
       class="container mx-auto py-16 flex flex-col md:flex-row items-center gap-10"
     >
-      <img src="/contacto.jpg" alt="Contacto" class="w-full md:w-1/2 rounded" />
+      <img
+        src={`${import.meta.env.BASE_URL}contacto.jpg`}
+        alt="Contacto"
+        class="w-full md:w-1/2 rounded"
+      />
+
       <form class="w-full md:w-1/2 space-y-4">
         <input
           type="text"

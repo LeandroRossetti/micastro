@@ -1,8 +1,11 @@
-// @ts-check
-import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
-// https://astro.build/config
+import { defineConfig } from 'astro/config';
+
+import tailwindcss from '@tailwindcss/vite';
+
 export default defineConfig({
+  base: '/micastro/',
+  output: 'static',
+
   vite: {
     plugins: [tailwindcss()],
   },
