@@ -9,7 +9,7 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
     <section class="relative w-full h-[80vh] bg-[#F3AAB1]">
       <!-- Imagen centrada -->
       <img
-        src={`${import.meta.env.BASE_URL}1.jpeg`}
+        src={`${import.meta.env.BASE_URL}landing.jpeg`}
         alt="Entrenamiento"
         class="absolute inset-0 w-full h-full object-contain"
       />
@@ -59,11 +59,11 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
                 2px 2px 0px hsl(0, 4%, 22%);
             "
           >
-            Nutrición
+            Potencia tu bienestar
           </h3>
 
           <a
-            href="/nutricion"
+            href={`${import.meta.env.BASE_URL}potencia`}
             class="bg-[#f3aab1] hover:bg-[#ffddde] px-4 py-2 rounded mt-4 inline-block text-center animate-pulse-scale"
           >
             Ver más
@@ -71,7 +71,7 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
         </div>
         <div
           class="bg-cover bg-center h-[80vh] flex flex-col justify-between p-0 text-white"
-          style={`background-image: url('${import.meta.env.BASE_URL}111.jpeg');`}
+          style={`background-image: url('${import.meta.env.BASE_URL}14.jpeg');`}
         >
           <h3
             class="text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded w-fit"
@@ -84,10 +84,10 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
                 2px 2px 0px hsl(0, 4%, 22%);
             "
           >
-            Potencia tu bienestar
+            Clases en vivo
           </h3>
           <a
-           href={`${import.meta.env.BASE_URL}potencia`}
+           href={`${import.meta.env.BASE_URL}clases`}
             class="bg-[#f3aab1] hover:bg-[#ffddde] px-4 py-2 rounded mt-4 inline-block text-center animate-pulse-scale"
           >
             Ver más
@@ -95,7 +95,7 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
         </div>
         <div
           class="bg-cover bg-center h-[80vh] flex flex-col justify-between p-0 text-white"
-          style={`background-image: url('${import.meta.env.BASE_URL}10.jpeg');`}
+          style={`background-image: url('${import.meta.env.BASE_URL}planificacion.jpeg');`}
         >
           <h3
             class="text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded w-fit"
@@ -108,10 +108,10 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
                 2px 2px 0px hsl(0, 4%, 22%);
             "
           >
-            Mentalidad
+            Planificación personalizada
           </h3>
           <a
-            href="/mentalidad"
+            href={`${import.meta.env.BASE_URL}planificacion`}
             class="bg-[#f3aab1] hover:bg-[#ffddde] px-4 py-2 rounded mt-4 inline-block text-center animate-pulse-scale"
           >
             Ver más
