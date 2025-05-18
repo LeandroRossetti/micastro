@@ -44,7 +44,7 @@ import "../styles/global.css";
         <a href={`${import.meta.env.BASE_URL}`} class="hover:underline block py-2">Inicio</a>
       </li>
       <li>
-        <a href={`${import.meta.env.BASE_URL}#quien-soy`} class="hover:underline block py-2">¿Quién soy?</a>
+        <a href={`${import.meta.env.BASE_URL}#sobre-mi`} class="hover:underline block py-2">Sobre mí</a>
       </li>
       <li>
         <a href={`${import.meta.env.BASE_URL}#planes`} class="hover:underline block py-2">Planes</a>
@@ -55,34 +55,34 @@ import "../styles/global.css";
     </ul>
   </nav>
 
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  if (toggle && menu) {
     let isOpen = false;
 
     toggle.addEventListener('click', () => {
       isOpen = !isOpen;
       if (isOpen) {
         menu.classList.remove('max-h-0');
-        menu.classList.add('py-4');
-        menu.classList.add('max-h-96');
+        menu.classList.add('py-4', 'max-h-96');
       } else {
-        menu.classList.remove('max-h-96');
-        menu.classList.remove('py-4');
+        menu.classList.remove('max-h-96', 'py-4');
         menu.classList.add('max-h-0');
       }
     });
 
-    // Cierra el menú cuando se hace clic en un enlace
     menu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         isOpen = false;
-        menu.classList.remove('max-h-96');
-        menu.classList.remove('py-4');
+        menu.classList.remove('max-h-96', 'py-4');
         menu.classList.add('max-h-0');
       });
     });
-  </script>
+  }
+</script>
+
 </header>
 
 
