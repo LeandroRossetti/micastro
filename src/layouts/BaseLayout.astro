@@ -10,7 +10,9 @@ import "../styles/global.css";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+  <slot name="head" />
   </head>
+  
   <body class="font-sans text-gray-800">
     <!-- Header -->
    <header class="bg-white shadow-md sticky top-0 z-50">

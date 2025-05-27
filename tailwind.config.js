@@ -4,7 +4,11 @@ export default {
     './src/**/*.{astro,html,js,jsx,ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+     bebas: ['"Bebas Neue"', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
