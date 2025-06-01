@@ -1,0 +1,27 @@
+/* Riwaya */
+@font-face {
+  font-family: 'Riwaya';
+  src: url('/micastro/fonts/29LTRiwaya-Regular.woff2') format('woff2'),
+       url('/micastro/fonts/29LTRiwaya-Regular.woff') format('woff');
+       
+  font-weight: normal;
+  font-style: normal;
+}
+
+.riwaya {
+  font-family: 'Riwaya', sans-serif;
+}
+
+
+/* HKGrotesk Regular */
+@font-face {
+  font-family: 'HKGrotesk';
+  src: url('/micastro/fonts/HKGrotesk-Regular.woff2') format('woff2'),
+       url('/micastro/fonts/HKGrotesk-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hk {
+  font-family: 'HKGrotesk', sans-serif;
+}

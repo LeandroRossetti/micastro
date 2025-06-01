@@ -1,17 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import "../styles/global.css"; // Asegurate que este archivo existe si querés estilos globales adicionales
+
 ---
 
 <BaseLayout title="Inicio">
-  <Fragment slot="head">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <style>
-      .bebas {
-        font-family: 'Bebas Neue', sans-serif;
-      }
-    </style>
-  </Fragment>
+
   <main class="space-y-20 bg-[#F3AAB1]">
     <!-- FFDDDE -->
 <section class="relative w-full h-[80vh] bg-[#F3AAB1]">
@@ -30,12 +23,12 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
     <!-- Contenedor de los textos a la derecha -->
     <div class="w-2/3 flex flex-col justify-center gap-8">
       <div>
-        <h1 class="bebas text-xl md:text-6xl  text-white">
+        <h1 class="riwaya text-xl md:text-6xl  text-white">
           Hay un programa de entrenamiento que es para vos!
         </h1>
       </div>
       <div>
-        <p class="text-xl md:text-4xl font-bold text-white">
+        <p class="hk text-xl md:text-4xl font-bold text-white">
           Sos tu proyecto más grande, ¿estás lista para que lo logremos?
         </p>
       </div>
@@ -46,7 +39,7 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
 
     <!-- Planes -->
     <section id="planes" class="container mx-auto py-10 ">
-      <h2 class="text-3xl font-bold text-center mb-8 text-white">
+      <h2 class="riwaya text-3xl font-bold text-center mb-8 text-white">
         Planes de entrenamiento
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -55,7 +48,7 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
           style={`background-image: url('${import.meta.env.BASE_URL}potencia.jpeg');`}
         >
           <h3
-            class="text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded w-fit"
+            class=" hk text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded w-fit"
             style="
                 box-shadow:
                   1px 1px 0px hsl(0, 4%, 22%),
@@ -80,7 +73,7 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
           style={`background-image: url('${import.meta.env.BASE_URL}14.jpeg');`}
         >
           <h3
-            class="text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded w-fit"
+            class="hk text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded w-fit"
             style="
                 box-shadow:
                   1px 1px 0px hsl(0, 4%, 22%),
@@ -104,7 +97,7 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
           style={`background-image: url('${import.meta.env.BASE_URL}planificacion.jpeg');`}
         >
           <h3
-            class="text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded w-fit"
+            class="hk text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded w-fit"
             style="
                 box-shadow:
                   1px 1px 0px hsl(0, 4%, 22%),
@@ -146,7 +139,7 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
       <div
         class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white text-center px-4"
       >
-        <h2 class="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+        <h2 class=" riwaya text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
           Sobre mí
         </h2>
         <a
@@ -160,7 +153,7 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
 
     <!-- Testimonios -->
     <section class="container mx-auto py-16">
-      <h2 class="text-3xl font-bold text-center mb-8 text-white">Testimonios</h2>
+      <h2 class="riwaya text-3xl font-bold text-center mb-8 text-white">Testimonios</h2>
       <div class="grid gap-8 md:grid-cols-3">
         <div class="p-6 bg-gray-100 rounded shadow">Testimonio 1</div>
         <div class="p-6 bg-gray-100 rounded shadow">Testimonio 2</div>
@@ -170,8 +163,8 @@ import "../styles/global.css"; // Asegurate que este archivo existe si querés e
 
     <!-- Sección de Contacto -->
     <section id="contacto" class="bg-[#f3aab1] py-16 px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">¡Hablemos!</h2>
-      <p class="text-white text-lg mb-10">
+      <h2 class="riwaya text-3xl md:text-4xl font-bold mb-6 text-white">¡Hablemos!</h2>
+      <p class="hk text-white text-lg mb-10">
         Si tenés dudas o querés sumarte, escribime por WhatsApp o por mail.
       </p>
 
