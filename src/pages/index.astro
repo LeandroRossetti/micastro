@@ -8,22 +8,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <main class="space-y-20 bg-[#F3AAB1]">
     <!-- FFDDDE -->
 <section class="relative w-full h-[80vh] bg-[#F3AAB1]">
-  <!-- Contenedor principal con flex -->
-  <div class="flex items-center h-full px-8 gap-8">
+  <div class="flex flex-col md:flex-row items-center h-full px-8 gap-8">
     
-    <!-- Imagen a la izquierda -->
-    <div class="w-1/3 h-full">
+    <!-- Imagen -->
+    <div class="w-full md:w-1/3 h-64 md:h-full">
       <img
-        src=`${import.meta.env.BASE_URL}landing.jpeg`
+        src={`${import.meta.env.BASE_URL}landing.jpeg`}
         alt="Entrenamiento"
         class="w-full h-full object-cover rounded-xl"
       />
     </div>
 
-    <!-- Contenedor de los textos a la derecha -->
-    <div class="w-2/3 flex flex-col justify-center gap-8">
+    <!-- Texto -->
+    <div class="w-full md:w-2/3 flex flex-col justify-center gap-8">
       <div>
-        <h1 class="riwaya text-xl md:text-6xl  text-white">
+        <h1 class="riwaya text-xl md:text-6xl text-white">
           Hay un programa de entrenamiento que es para vos!
         </h1>
       </div>
@@ -33,8 +32,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </p>
       </div>
     </div>
+
   </div>
 </section>
+
 
 
     <!-- Planes -->
