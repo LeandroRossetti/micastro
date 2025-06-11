@@ -25,3 +25,12 @@
 .hk {
   font-family: 'HKGrotesk', sans-serif;
 }
+
+
+h1,h2,h3{
+font-family: riwaya;
+}
+
+p{
+  font-family: hk;
+}
