@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "astro": "^5.7.12"
   },
   "devDependencies": {

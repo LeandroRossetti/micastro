@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
+
 export default defineConfig({
   base: '/micastro/',
   output: 'static',
@@ -9,4 +10,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  integrations: [],
 });

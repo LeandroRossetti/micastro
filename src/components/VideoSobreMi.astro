@@ -1,0 +1,49 @@
+---
+const videoSrc = `${import.meta.env.BASE_URL}121.mp4`;
+---
+
+<section id="sobre-mi" class="relative h-[500px] md:h-[700px] overflow-hidden">
+  <!-- Video de fondo -->
+  <video
+    id="videoSobreMi"
+    autoplay
+    muted
+    loop
+    playsinline
+    class="absolute inset-0 w-full h-full object-contain object-center"
+  >
+    <source src={videoSrc} type="video/mp4" />
+  </video>
+
+  <!-- Botón mute/desmute -->
+  <button
+    id="toggleMute"
+    class="absolute bottom-4 right-4 z-20 bg-black/50 p-2 rounded-full text-white"
+    aria-label="Toggle sound"
+  >
+    🔇
+  </button>
+
+  <!-- Capa de superposición -->
+  <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white text-center px-4">
+    <h2 class="riwaya text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">Sobre mí</h2>
+    <a
+      href={`${import.meta.env.BASE_URL}sobremi`}
+      class="bg-[#f3aab1] hover:bg-[#ffddde] text-black font-semibold px-6 py-3 rounded shadow-md animate-pulse transition-all"
+    >
+      Ver más
+    </a>
+  </div>
+
+  <!-- Script para el botón -->
+  <script is:client>
+    const btn = document.getElementById("toggleMute");
+    const video = document.getElementById("videoSobreMi");
+
+    btn.addEventListener("click", () => {
+      if (!video) return;
+      video.muted = !video.muted;
+      btn.textContent = video.muted ? "🔇" : "🔊";
+    });
+  </script>
+</section>

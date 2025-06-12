@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
+import VideoSobreMi1 from '../components/VideoSobreMi.astro';
 ---
 
 <BaseLayout title="Inicio">
@@ -119,36 +119,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <!-- Sobre mí con video de fondo -->
-    <section
-      id="sobre-mi"
-      class="relative h-[500px] md:h-[700px] overflow-hidden"
-    >
-      <!-- Video de fondo -->
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        class="absolute inset-0 w-full h-full object-contain object-center"
-      >
-        <source src={`${import.meta.env.BASE_URL}121.mp4`} type="video/mp4" />
-      </video>
 
-      <!-- Capa de superposición -->
-      <div
-        class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white text-center px-4"
-      >
-        <h2 class=" riwaya text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-          Sobre mí
-        </h2>
-        <a
-          href={`${import.meta.env.BASE_URL}sobremi`}
-          class="bg-[#f3aab1] hover:bg-[#ffddde] text-black font-semibold px-6 py-3 rounded shadow-md animate-pulse transition-all"
-        >
-          Ver más
-        </a>
-      </div>
-    </section>
+<VideoSobreMi1 client:load />
 
     <!-- Testimonios -->
     <section class="container mx-auto py-16">
