@@ -1,13 +1,11 @@
-export default function initVideoMuteToggle() {
-  document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('videoSobreMi');
-    const btn = document.getElementById('muteButton');
+export default function toggleMuteScript() {
+  const btn = document.getElementById("toggleMute");
+  const video = document.getElementById("videoSobreMi");
 
-    if (!video || !btn) return;
+  if (!btn || !video) return;
 
-    btn.addEventListener('click', () => {
-      video.muted = !video.muted;
-      btn.textContent = video.muted ? '🔇' : '🔊';
-    });
+  btn.addEventListener("click", () => {
+    video.muted = !video.muted;
+    btn.textContent = video.muted ? "🔇" : "🔊";
   });
 }

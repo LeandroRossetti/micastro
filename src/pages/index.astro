@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import VideoSobreMi1 from "../components/VideoSobreMi.astro";
+import VideoSobreMi from '../components/VideoSobreMi.astro';
+
 ---
 
 <BaseLayout title="Inicio">
@@ -116,13 +117,13 @@ import VideoSobreMi1 from "../components/VideoSobreMi.astro";
     </section>
 
     <!-- Sobre mí con video de fondo -->
+<VideoSobreMi />
 
-    <VideoSobreMi1 client:load />
 
     <!-- Testimonios -->
 <section id="testimonios" class="container mx-auto py-10">
   <h2 class="riwaya text-4xl font-bold text-center mb-8 text-white">
-    Testimonios reales
+    Testimonios
   </h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
     <!-- Repetí este bloque por cada imagen -->
