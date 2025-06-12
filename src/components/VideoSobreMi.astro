@@ -2,28 +2,35 @@
 // src/components/VideoSobreMi.astro
 const videoSrc = `${import.meta.env.BASE_URL}121.mp4`;
 ---
-
 <section id="sobre-mi" class="relative h-[500px] md:h-[700px] overflow-hidden">
-  <video
-    id="videoSobreMi"
-    autoplay
-    muted
-    loop
-    playsinline
-    class="absolute inset-0 w-full h-full object-contain object-center"
-  >
-    <source src={videoSrc} type="video/mp4" />
-  </video>
+  <!-- Contenedor del video con posición relativa -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="relative">
+      <!-- Video -->
+      <video
+        id="videoSobreMi"
+        autoplay
+        muted
+        loop
+        playsinline
+        class="max-h-[700px] max-w-full object-contain"
+      >
+        <source src={videoSrc} type="video/mp4" />
+      </video>
 
-  <button
-    id="toggleMute"
-    class="absolute bottom-4 right-4 z-20 bg-black/50 p-2 rounded-full text-white"
-    aria-label="Toggle sound"
-  >
-    🔇
-  </button>
+      <!-- Botón sobre el video -->
+      <button
+        id="toggleMute"
+        class="absolute bottom-2 right-2 z-20 bg-black/50 p-2 rounded-full text-white"
+        aria-label="Toggle sound"
+      >
+        🔇
+      </button>
+    </div>
+  </div>
 
-  <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white text-center px-4">
+  <!-- Capa de superposición -->
+  <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white text-center px-4 z-10">
     <h2 class="riwaya text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">Sobre mí</h2>
     <a
       href={`${import.meta.env.BASE_URL}sobre-mi`}
@@ -33,15 +40,16 @@ const videoSrc = `${import.meta.env.BASE_URL}121.mp4`;
     </a>
   </div>
 
+  <!-- Script -->
   <script is:client>
     const btn = document.getElementById("toggleMute");
     const video = document.getElementById("videoSobreMi");
 
-    if (btn && video) {
-      btn.addEventListener("click", () => {
-        video.muted = !video.muted;
-        btn.textContent = video.muted ? "🔇" : "🔊";
-      });
-    }
+    btn.addEventListener("click", () => {
+      if (!video) return;
+      video.muted = !video.muted;
+      btn.textContent = video.muted ? "🔇" : "🔊";
+    });
   </script>
 </section>
+
