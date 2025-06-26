@@ -1,9 +1,9 @@
 ---
-// src/components/VideoSobreMi.astro
 const videoSrc = `${import.meta.env.BASE_URL}121.mp4`;
 ---
-<section id="sobre-mi" class="relative h-[500px] md:h-[700px] overflow-hidden">
-  <!-- Contenedor del video con posición relativa -->
+
+<section id="sobre-mi" class="relative h-[500px] md:h-[700px]">
+  <!-- Contenedor del video -->
   <div class="absolute inset-0 flex items-center justify-center">
     <div class="relative">
       <!-- Video -->
@@ -18,13 +18,18 @@ const videoSrc = `${import.meta.env.BASE_URL}121.mp4`;
         <source src={videoSrc} type="video/mp4" />
       </video>
 
-      <!-- Botón sobre el video -->
+      <!-- Botón de sonido -->
       <button
         id="toggleMute"
-        class="absolute bottom-2 right-2 z-20 bg-black/50 p-2 rounded-full text-white"
+        class="absolute bottom-2 right-2 z-20 bg-black/70 p-3 rounded-full text-white flex items-center justify-center"
         aria-label="Toggle sound"
+        style="width: 44px; height: 44px;"
       >
-        🔇
+        <!-- Icono inicial muteado -->
+        <svg id="iconMute" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+          <path d="M3 9v6h4l5 5V4L7 9H3z" />
+          <line x1="19" y1="5" x2="5" y2="19" stroke="red" stroke-width="2" />
+        </svg>
       </button>
     </div>
   </div>
@@ -42,14 +47,38 @@ const videoSrc = `${import.meta.env.BASE_URL}121.mp4`;
 
   <!-- Script -->
   <script is:client>
-    const btn = document.getElementById("toggleMute");
-    const video = document.getElementById("videoSobreMi");
+    (() => {
+      const btn = document.getElementById("toggleMute");
+      const video = document.getElementById("videoSobreMi");
 
-    btn.addEventListener("click", () => {
-      if (!video) return;
-      video.muted = !video.muted;
-      btn.textContent = video.muted ? "🔇" : "🔊";
-    });
+      const iconSound = `
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+          <path d="M3 9v6h4l5 5V4L7 9H3z" />
+          <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03z" />
+          <path d="M19.5 12c0 3.04-1.64 5.64-4 7.03v-2.12c1.23-1.04 2-2.63 2-4.91s-.77-3.87-2-4.91V4.97c2.36 1.39 4 3.99 4 7.03z" />
+        </svg>
+      `;
+
+      const iconMute = `
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+          <path d="M3 9v6h4l5 5V4L7 9H3z" />
+          <line x1="19" y1="5" x2="5" y2="19" stroke="red" stroke-width="2" />
+        </svg>
+      `;
+
+      const updateIcon = () => {
+        btn.innerHTML = video.muted ? iconMute : iconSound;
+      };
+
+      if (btn && video) {
+        btn.addEventListener("click", () => {
+          video.muted = !video.muted;
+          updateIcon();
+        });
+
+        // Inicializa el icono al cargar
+        updateIcon();
+      }
+    })();
   </script>
 </section>
-
