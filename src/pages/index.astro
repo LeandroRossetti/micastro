@@ -42,7 +42,7 @@ import VideoSobreMi from '../components/VideoSobreMi.astro';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div
           class="bg-cover bg-center h-[80vh] flex flex-col justify-between p-0 text-white"
-          style={`background-image: url('${import.meta.env.BASE_URL}potencia.jpeg');`}
+          style={`background-image: url('${import.meta.env.BASE_URL}desafio.jpeg');`}
         >
           <h3
             class="hk text-xl font-bold text-white bg-[#f3aab1] px-6 py-2 rounded text-center w-full max-w-[90%] mx-auto mt-6"
@@ -55,11 +55,11 @@ import VideoSobreMi from '../components/VideoSobreMi.astro';
                   2px 2px 0px hsl(0, 4%, 22%);
               "
           >
-            Potencia tu bienestar
+            Desafio 30
           </h3>
 
           <a
-            href={`${import.meta.env.BASE_URL}potencia`}
+            href={`${import.meta.env.BASE_URL}desafio30`}
             class="bg-[#f3aab1] hover:bg-[#ffddde] px-4 py-2 rounded mt-4 inline-block text-center animate-pulse-scale mb-6"
           >
             Ver más
@@ -125,48 +125,49 @@ import VideoSobreMi from '../components/VideoSobreMi.astro';
   <h2 class="riwaya text-4xl font-bold text-center mb-8 text-white">
     Testimonios
   </h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
-    <!-- Repetí este bloque por cada imagen -->
-
-
-      <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-      <img
-        src={`${import.meta.env.BASE_URL}test2.jpg`}
-        alt="Testimonio de WhatsApp"
-        class="w-full h-80 object-cover"
-      />
-    </div>
-
-      <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-      <img
-        src={`${import.meta.env.BASE_URL}test34.jpg`}
-        alt="Testimonio de WhatsApp"
-        class="w-full h-80"
-      />
-    </div>
-
-      <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-      <img
-        src={`${import.meta.env.BASE_URL}test4.jpg`}
-        alt="Testimonio de WhatsApp"
-        class="w-full h-80 object-cover"
-      />
-    </div>
-
-
   
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 text-black">
+    
+    <!-- Testimonio 1 -->
+    <div class="bg-white rounded-lg p-6 shadow-lg flex flex-col justify-between h-full">
+      <p class="text-lg mb-4">
+        "Hola Micaaaa, ¿cómo estás? Solo para contarte que estoy súper feliz con los cambios que estoy sintiendo, sinceramente no me imaginaba todo lo que me podía ayudar. Todo lo que hago, lo hago con más energía, me siento re bien 💃 jajaja. 
+        <br /><br />
+        Fuera de broma, tenías razón que haciéndome 2 horitas para mí (más algunos cambios en la alimentación) iba a notar los cambios 👏👏👏 Genia total!!!!"
+      </p>
+      <p class="font-bold text-right">Andrea</p>
+    </div>
+
+    <!-- Testimonio 2 -->
+    <div class="bg-white rounded-lg p-6 shadow-lg flex flex-col justify-between h-full">
+      <p class="text-lg mb-4">
+        "Hola Micaaa, sé que no son horarios, pero me acabo de pesar y estoy en 63.3 jajaj, re contenta aunque igual voy por más. Así, pero bueno, quería contarte porque la posta estaba re negada y ni me quería pesar. 
+        <br /><br />
+        Igual obvio que no me dejo llevar solo por eso!!"
+      </p>
+      <p class="font-bold text-right">Cami</p>
+    </div>
+
+    <!-- Testimonio 3 -->
+    <div class="bg-white rounded-lg p-6 shadow-lg flex flex-col justify-between h-full">
+      <p class="text-lg mb-4">
+        "Gracias Mica, porque no solo con tu ayuda y apoyo estoy empezando a comer sano y rico, sino porque también estoy cocinando con ganas 😂 cosa que odio. Pero ahora le estoy encontrando el gustito, aparte de que me siento con mayor energía ❤️"
+      </p>
+      <p class="font-bold text-right">Estefi</p>
+    </div>
+
   </div>
 
   <div class="mt-10 mx-auto max-w-md">
-    <h2 class="text-center text-3xl text-white">Antes y después de Perli</h2>
-  <img
-    src={`${import.meta.env.BASE_URL}test5.jpg`}
-    alt="Transformación: antes y después"
-    class="rounded-lg shadow-xl w-full object-contain"
-  />
-</div>
-
+    <h2 class="text-center text-3xl text-white font-bold">Antes y después de Perli</h2>
+    <img
+      src={`${import.meta.env.BASE_URL}test5.jpg`}
+      alt="Transformación: antes y después"
+      class="rounded-lg shadow-xl w-full object-contain"
+    />
+  </div>
 </section>
+
 
     <!-- Sección de Contacto -->
     <section id="contacto" class="bg-[#f3aab1] py-16 px-4 text-center">
