@@ -193,18 +193,25 @@ import VideoSobreMi from '../components/VideoSobreMi.astro';
           WhatsApp
         </a>
 
-        <!-- Botón de Email -->
-        <a
-          href="mailto:Micaela.rosales8@gmail.com"
-          class="bg-white hover:bg-gray-100 text-[#f3aab1] font-semibold px-6 py-3 rounded shadow-md transition transform hover:scale-105 flex items-center gap-2"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M2 4a2 2 0 012-2h16a2 2 0 012 2v1.5L12 13 2 5.5V4zm0 3.236V20a2 2 0 002 2h16a2 2 0 002-2V7.236L12 15 2 7.236z"
-            ></path>
-          </svg>
-          micaela.rosales8@gmail.com
-        </a>
+<!-- Botón de Email que copia al portapapeles -->
+<button
+  id="copyEmail"
+  class="bg-white hover:bg-gray-100 text-[#f3aab1] font-semibold px-6 py-3 rounded shadow-md transition transform hover:scale-105 flex items-center gap-2 relative"
+>
+  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+    <path
+      d="M2 4a2 2 0 012-2h16a2 2 0 012 2v1.5L12 13 2 5.5V4zm0 3.236V20a2 2 0 002 2h16a2 2 0 002-2V7.236L12 15 2 7.236z"
+    ></path>
+  </svg>
+  micaela.rosales8@gmail.com
+</button>
+
+<!-- Toast flotante -->
+<div id="toastEmail" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 rounded shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+  ¡Email copiado al portapapeles!
+</div>
+
+
       </div>
     </section>
   </main>
@@ -220,4 +227,34 @@ import VideoSobreMi from '../components/VideoSobreMi.astro';
       }, 3000);
     }
   </script>
+<script is:client>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btnCopy = document.getElementById("copyEmail");
+    const toast = document.getElementById("toastEmail");
+
+    if (btnCopy && toast) {
+      btnCopy.addEventListener("click", () => {
+        const email = "micaela.rosales8@gmail.com";
+
+        navigator.clipboard.writeText(email)
+          .then(() => {
+            // Muestra el toast
+            toast.classList.remove("opacity-0");
+            toast.classList.add("opacity-100");
+
+            // Oculta después de 2 segundos
+            setTimeout(() => {
+              toast.classList.remove("opacity-100");
+              toast.classList.add("opacity-0");
+            }, 2000);
+          })
+          .catch(err => {
+            console.error("Error al copiar:", err);
+          });
+      });
+    }
+  });
+</script>
+
+
 </BaseLayout>
