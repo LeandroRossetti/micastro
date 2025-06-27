@@ -8,7 +8,7 @@ import VideoSobreMi from '../components/VideoSobreMi.astro';
   <main class="space-y-20 bg-[#F3AAB1]">
     <!-- INICIO -->
     <section
-      class="relative w-full min-h-[60vh] bg-[#F3AAB1] pt-8 lg:min-h-screen mb-0"
+      class="relative w-full min-h-[60vh] bg-[#F3AAB1] pt-8 lg:min-h-[70vh] mb-0"
     >
       <div class="flex flex-col md:flex-row items-center px-8 gap-8">
         <!-- Imagen -->
@@ -20,18 +20,15 @@ import VideoSobreMi from '../components/VideoSobreMi.astro';
           />
         </div>
 
-        <!-- Texto -->
-        <div
-          class="w-full md:w-2/3 flex flex-col justify-center gap-6 md:gap-8 md:pb-0"
-        >
-          <h1 class="text-xl md:text-6xl text-white">
-            Hay un programa de entrenamiento que es para vos!
-          </h1>
-          <p class="text-xl md:text-4xl text-white">
-            Sos tu proyecto más grande,<br /> ¿estás lista para que lo logremos?
-          </p>
-        </div>
-      </div>
+<div class="w-full md:w-2/3 flex flex-col justify-center gap-6 md:gap-8 md:pb-0 max-w-[700px] mx-auto md:mx-0">
+  <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white text-center md:text-left">
+    Hay un programa de entrenamiento que es para vos!
+  </h1>
+  <p class="text-lg sm:text-xl md:text-3xl lg:text-4xl text-white text-center md:text-left">
+    Sos tu proyecto más grande,<br /> ¿estás lista para que lo logremos?
+  </p>
+</div>
+
     </section>
 
     <!-- Planes -->
