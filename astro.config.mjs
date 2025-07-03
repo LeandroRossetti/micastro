@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 
 export default defineConfig({
-  base: '/micastro/',
+  base: '/',
   output: 'static',
 
   vite: {
